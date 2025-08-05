@@ -5,6 +5,9 @@
 #
 # Code to calculate the probability of an SNV being caused by a particular SBS signature
 # Note: Requires info on which signatures that are present in a sample
+# This code is written to be used with SBS1, SBS5, SBS40a, SBS31, SBS35 and the novel signature extracted in 
+# "Extensive and differential chemotherapy mutagenesis in children" (Wenger et al).
+# The number of signatures and which signatures can be adapted by changes in the code as indicated below.
 
 # Formula for calculation taken from S1 from
 # https://ashpublications.org/blood/article/137/21/2992/475247/Clonal-hematopoiesis-and-therapy-related-myeloid
