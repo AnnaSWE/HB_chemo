@@ -5,11 +5,10 @@
 #
 # Code to calculate the probability of an SNV being caused by a particular SBS signature
 # Note: Requires info on which signatures that are present in a sample
-# This code is written to be used with SBS1, SBS5, SBS40a, SBS31, SBS35 and the novel signature extracted in 
-# "Extensive and differential chemotherapy mutagenesis in children" (Wenger et al).
+# This code is written to be used with SBS1, SBS5, SBS40a, SBS31, SBS35 and (optionally) to add a custom/novel signature.
 # The number of signatures and which signatures can be adapted by changes in the code as indicated below.
 
-# Formula for calculation taken from S1 from
+# Formula for the probability calculation is taken from S1 from:
 # https://ashpublications.org/blood/article/137/21/2992/475247/Clonal-hematopoiesis-and-therapy-related-myeloid
 
 #-------------------------------------------------------------------------------------
@@ -40,7 +39,7 @@ samples=read.table("/lustre/scratch126/casm/team274sb/aw35/hepatoblastoma/t-NS/T
 
 #-------------------------------------------------------------------------------------
 #
-# Read in COSMIC reference signature and (optional) add your novel signature to it
+# Read in COSMIC reference signature and (optional) add your custom/novel signature to it
 #
 #-------------------------------------------------------------------------------------
 
@@ -72,7 +71,7 @@ colnames(SBS_ref)[ncol(SBS_ref)]="novel"
 #-------------------------------------------------------------------------------------
 #
 # Read in signature contributions for the samples of interest and (if needed) 
-# break down into SBS signatures (+ novel signature if applicable)
+# break down into SBS signatures if not done already (+ add novel signature if applicable)
 #
 #-------------------------------------------------------------------------------------
 
