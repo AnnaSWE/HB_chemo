@@ -1,0 +1,13 @@
+#Function for cosine similarity calculation
+cos_sim = function(x, y) {res = x %*% y / (sqrt(x %*% x) * sqrt(y %*% y))
+res = as.numeric(res)
+return(res)}
+
+comparesignatures_cossim <- function(signatures1,signatures2){
+  signcompared=matrix(nrow=length(signatures1[1,]),ncol=length(signatures2[1,]))
+  for (i in 1:length(signatures1[1,])){
+    for (j in 1:length(signatures2[1,])){    
+      signcompared[i,j]=cos_sim(signatures1[,i],signatures2[,j])
+    }}    
+  return(signcompared)
+}
